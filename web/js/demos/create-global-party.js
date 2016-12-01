@@ -34,5 +34,23 @@ function validateForm() {
 }
 
 function createFakeParty() {
+    var data = {
+        name: $('#partyName').val(),
+        country: $('#partyCountry').val(),
+        zipCode: $('#partyZipCode').val()
+    };
     $('#creatingGlobalPartyModal').modal();
+
+    var fakeDelay = 1500 + Math.random(2500);
+    setTimeout(function() { createFackeParySuccess(data); }, fakeDelay);
+}
+
+function createFackeParySuccess(data) {
+    loadSection('createGlobalPartySuccess');
+    $('#newPartyGlobalName').html(data.name);
+    $('#newPartyCountryName').html(data.country);
+    $('#newPartyNationalName').html(data.name + ', ' + data.country);
+    $('#newPartyRegionalName').html(data.country + ', ZIP ' + data.zipCode);
+
+    $('#creatingGlobalPartyModal').modal('hide');
 }

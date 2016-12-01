@@ -73,10 +73,11 @@
     <h2>Welcome to the Digital Party demo website</h2>
 
     <p>
-      These are only mock-up demos for the Ether camp's hackathon project:
+      These are the mock-up demos for the Ether camp's hackathon project:
+      <br />
       <a href="https://hack.ether.camp/camp/17">
         A prototype of a decentralized political party
-      </a>.
+      </a>
     </p>
 
     <p>
@@ -95,7 +96,7 @@
     </p>
 
     <div class="row">
-      <form id="createPartyForm" 
+      <form id="createPartyForm" action="#"
             class="form-inline col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         
         <div class="form-group">
@@ -108,7 +109,7 @@
           <label for="partyCountry">Country</label>
           <select class="form-control" id="partyCountry" required>
             <option value="" selected>( Select your country )</option>
-            <option value="FR">France</option>
+            <option value="France">France</option>
             <option value="" disabled>[Work in progress, more soon]</option>
           </select>
         </div>
@@ -124,7 +125,7 @@
                   class="btn btn-secondary btn-lg">
             Give up
           </button>
-          <button type="button" id="createPartySubmitBtn"
+          <button type="submit" id="createPartySubmitBtn"
                   class="btn btn-outline-primary btn-lg">
             Create Party
           </button>
@@ -134,7 +135,38 @@
 
     <script src="js/demos/create-global-party.js"></script>
   </template>
-      
+
+  <template id="createGlobalPartySuccessTmpl"><!-- CREATE GLOBAL PARTY SUCC. -->
+
+    <div class="alert alert-success" role="alert">
+      Your new Global Digital Party has been created!
+    </div>
+
+    <div class="panel panel-success">
+      <div class="panel-heading">Global Party</div>
+      <div class="panel-body">
+        Name: <strong id="newPartyGlobalName"></strong>
+      </div>
+    </div>
+
+    <div class="panel panel-success">
+      <div class="panel-heading">National Party</div>
+      <div class="panel-body">
+        Country: <strong id="newPartyCountryName"></strong><br />
+        Name: <strong id="newPartyNationalName"></strong>
+      </div>
+    </div>
+
+    <div class="panel panel-success">
+      <div class="panel-heading">Regional Party</div>
+      <div class="panel-body">
+        Region: <strong id="newPartyRegionalName"></strong>
+      </div>
+    </div>
+  </template>
+
+  <!-- ------------------------------------------------------ TEMPLATES END -->
+
   <div class="modal fade bs-example-modal-sm" id="creatingGlobalPartyModal"
         tabindex="-1" role="dialog">
     <div class="modal-dialog modal-sm" role="document">

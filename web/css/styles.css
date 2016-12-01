@@ -69,6 +69,7 @@ body > .container-fluid {
 
         body > .container-fluid .menu-column {
             padding-top: 80px;
+            position: fixed;
         }
 
             body > .container-fluid .menu-column > ul > li {
@@ -79,8 +80,6 @@ body > .container-fluid {
 
         body > .container-fluid .main-page {
             z-index: 20;
-            margin: 3% 0 0 0;
-            height: 94%;
-            overflow-x: scroll;
+            margin: 3% 0 3% 0;
         }
 }

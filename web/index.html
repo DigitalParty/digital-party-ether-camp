@@ -8,6 +8,9 @@
   <title>Digital Party</title>
   <meta name="description" content="Digital Party">
   <meta name="author" content="Digital Party Team">
+  <link rel="icon" type="image/png" href="img/digital-party-logo-32px.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="img/digital-party-logo-16px.png" sizes="16x16" />
+
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -46,62 +49,139 @@
       <div class="col-md-3 menu-column">
         <ul class="nav nav-pills">
           <li>
-            <a href="#option-1">Option 1</a>
+            <a id="homeAHref" href="#">Home</a>
           </li>
           <li>
-            <a href="#option-2">Option 2</a>
+            <a id="createGlobalPartyAHref" href="#">
+              Create new global party
+            </a>
           </li>
-          <li>
-            <a href="#option-3">Option 3</a>
-          </li>
-          <li>
-            <a href="#option-4">Option 4</a>
-          </li>
-          <ul>
+        <ul>
       </div>
-      <div class="col-md-9">
-        <div class="well main-page">
-
-          <h2>Lorem ipsum</h2>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin erat leo, mattis sit amet lacus et, facilisis luctus enim.
-            Curabitur sagittis sapien ac fermentum vestibulum. In accumsan id lectus ac ultricies. Sed in varius urna, quis
-            convallis odio. Phasellus commodo aliquam nunc facilisis lacinia. Curabitur ante ex, interdum et fermentum vitae,
-            fringilla vel mi. Fusce congue laoreet magna ut fermentum. Duis finibus augue in enim maximus vehicula. Suspendisse
-            potenti. Vivamus eget mi metus. Aenean malesuada dui non felis accumsan tincidunt. Fusce consequat, libero ut
-            posuere feugiat, arcu urna ultrices orci, efficitur semper metus sem ac odio.
-          </p>
-          <p>
-            Suspendisse potenti. Etiam mollis augue nec massa ultrices, at egestas urna varius. In est sem, facilisis a felis at, consequat
-            iaculis libero. Donec fringilla, leo non mollis porta, leo ex accumsan mauris, nec fringilla orci dolor sed mi.
-            Aenean et ex tincidunt, hendrerit quam a, sollicitudin sapien. Mauris eget pellentesque arcu. Aenean rhoncus
-            vehicula fringilla. In sollicitudin egestas mauris eget aliquam. Quisque rutrum libero id neque consequat finibus.
-            Aenean vel vehicula mi. Praesent interdum arcu nec interdum fringilla.
-          </p>
-          <p>
-            Curabitur porta purus eros, vitae auctor neque pulvinar sagittis. Donec sit amet fermentum orci. Curabitur nibh lacus, tincidunt
-            id blandit eget, mattis eget dolor. Etiam quis quam dolor. Quisque molestie, tortor nec fringilla vestibulum,
-            mi lacus malesuada erat, eget convallis mi ipsum sit amet lectus. Donec blandit erat nisl, in finibus tortor
-            eleifend id. Pellentesque a purus sed tellus imperdiet congue vitae in augue. Pellentesque nec eros eu sapien
-            commodo iaculis. Sed eget nulla id magna dignissim lacinia. Fusce et mauris tellus. Proin vehicula, diam nec
-            efficitur sodales, purus erat molestie tellus, a tincidunt dui augue vitae nibh. Duis at velit laoreet, dapibus
-            neque a, dapibus libero.
-          </p>
-          <p>
-            Duis blandit, magna ut venenatis malesuada, est lectus iaculis leo, vitae pellentesque nulla nibh non tortor. In interdum
-            nunc tortor, non pretium turpis ultricies sed. Pellentesque volutpat iaculis sem vel maximus. Donec eget gravida
-            justo, eu finibus enim. Phasellus eu dignissim mauris, sit amet tempus magna. Cras nec velit orci. Mauris ac
-            lorem pellentesque, dictum elit non, maximus massa. Integer non dapibus nisl. Phasellus egestas pulvinar mauris,
-            id semper magna finibus at. Proin nunc leo, sagittis vitae sollicitudin et, ornare ut mauris. Class aptent taciti
-            sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam consectetur erat nulla, at ornare
-            arcu vehicula et.
-          </p>
+      <div class="col-md-9 offset-md-3">
+        <div id="mainPageDiv" class="well main-page">
+          loading ...
         </div>
       </div>
     </div>
   </div>
 
+  <div>
+  </div>
+
+  <template id="homeTmpl"> <!-- -------------------------------------- HOME -->
+    <h2>Welcome to the Digital Party demo website</h2>
+
+    <p>
+      These are the mock-up demos for the Ether camp's hackathon project:
+      <br />
+      <a href="https://hack.ether.camp/camp/17">
+        A prototype of a decentralized political party
+      </a>
+    </p>
+
+    <p>
+      You can choose the demos on the
+      <span class="hidden-sm-down">left</span>
+      <span class="hidden-md-up">top</span>
+      to try them.
+    </p>
+  </template>
+  
+  <template id="createGlobalPartyTmpl"> <!-- ---------- CREATE GLOBAL PARTY -->
+
+    <h2>Create a new Global Party</h2>
+    <p>
+      Please, fill the form to create the your new Global Party:
+    </p>
+
+    <div class="row">
+      <form id="createPartyForm" action="#"
+            class="form-inline col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        
+        <div class="form-group">
+          <label for="partyName">Name</label>
+          <input type="text" class="form-control" id="partyName" 
+                 placeholder="Digital Party" required autofocus />
+        </div>
+
+        <div class="form-group">
+          <label for="partyCountry">Country</label>
+          <select class="form-control" id="partyCountry" required>
+            <option value="" selected>( Select your country )</option>
+            <option value="France">France</option>
+            <option value="" disabled>[Work in progress, more soon]</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="partyZipCode">ZIP Code</label>
+          <input type="text" class="form-control" id="partyZipCode"
+                 placeholder="12345" maxlength="5" required />
+        </div>
+
+        <div class="form-buttons">
+          <button type="button" id="createPartyGiveUpBtn"
+                  class="btn btn-secondary btn-lg">
+            Give up
+          </button>
+          <button type="submit" id="createPartySubmitBtn"
+                  class="btn btn-outline-primary btn-lg">
+            Create Party
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="js/demos/create-global-party.js"></script>
+  </template>
+
+  <template id="createGlobalPartySuccessTmpl"><!-- CREATE GLOBAL PARTY SUCC. -->
+
+    <div class="alert alert-success" role="alert">
+      Your new Global Digital Party has been created!
+    </div>
+
+    <div class="panel panel-success">
+      <div class="panel-heading">Global Party</div>
+      <div class="panel-body">
+        Name: <strong id="newPartyGlobalName"></strong>
+      </div>
+    </div>
+
+    <div class="panel panel-success">
+      <div class="panel-heading">National Party</div>
+      <div class="panel-body">
+        Country: <strong id="newPartyCountryName"></strong><br />
+        Name: <strong id="newPartyNationalName"></strong>
+      </div>
+    </div>
+
+    <div class="panel panel-success">
+      <div class="panel-heading">Regional Party</div>
+      <div class="panel-body">
+        Region: <strong id="newPartyRegionalName"></strong>
+      </div>
+    </div>
+  </template>
+
+  <!-- ------------------------------------------------------ TEMPLATES END -->
+
+  <div class="modal fade bs-example-modal-sm" id="creatingGlobalPartyModal"
+        tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        
+        <div class="modal-header">
+          <h4 class="modal-title">Creating global party</h4>
+        </div>
+        <div class="modal-body">
+          <p>Please wait ...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="lib/bootstrap-material-4.0.2-dist/js/material.min.js"></script>
@@ -109,6 +189,7 @@
   <script>
 	$.material.init();
   </script>
+  <script src="js/demos.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,10 @@
 <!doctype html>
-<!-- template: https://www.sitepoint.com/a-basic-html5-template/ -->
 <html lang="en">
+<!-- template: https://www.sitepoint.com/a-basic-html5-template/ -->
+<!-- 
+  Creative commons content:
+  https://commons.wikimedia.org/wiki/File:User_icon_BLACK-01.png  
+-->
 
 <head>
   <meta charset="utf-8">
@@ -163,6 +167,100 @@
         Region: <strong id="newPartyRegionalName"></strong>
       </div>
     </div>
+  </template>
+
+  <template id="chapterDashboardTmpl"> <!-- ------------ CHAPTER DASHBOARD -->
+  <!--
+    Each chapter is composed of:
+    - a forum,
+      - at least one moderator for a thousand members
+    - a secretariat.
+    - a president
+
+    - a board of directors:
+      - Each chapter's board of directors is composed of:
+        - the chapter president, 
+        - the chapter secretary and
+        - the moderators who the chapter president will consider necessary
+    
+    - an executive committee,
+      - the moderators and the secretariat meet in executive committees
+  -->
+    <div class="chapter-dashboard">
+      <div class="page-header">
+        <h1>My Global Party</h1>
+      </div>
+
+      <div class="panel panel-primary board-of-directors-panel">
+        <div class="panel-heading">
+          Board of directors
+        </div>
+        <div class="panel-body row">
+
+          <div class="col-xs-6 col-sm-4 col-md-3">
+            <div class="panel panel-info president-panel">
+              <div class="panel-heading">President</div>
+              <div class="panel-body text-center">
+                <img src="img/user.png" class="img-circle img-responsive" />
+                <span class="label label-warning">Not elected</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-4 col-md-3">
+            <div class="panel panel-info secretary-panel">
+              <div class="panel-heading">Secretary</div>
+              <div class="panel-body text-center">
+                <img src="img/user.png" class="img-circle img-responsive" />
+                <span class="label label-warning">Not elected</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-6">
+            <div class="panel panel-info moderators-panel">
+              <div class="panel-heading">
+                Moderators (8)
+              </div>
+              <div class="panel-body text-center">
+                <img src="img/user.png" class="img-circle" />
+                <img src="img/user.png" class="img-circle" />
+                <img src="img/user.png" class="img-circle" />
+                <img src="img/user.png" class="img-circle" />
+                <img src="img/user.png" class="img-circle" />
+                <img src="img/user.png" class="img-circle" />
+                <img src="img/user.png" class="img-circle" />
+                <img src="img/user.png" class="img-circle" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="panel panel-primary forum-panel">
+        <div class="panel-heading">
+          Forum (4.400 members)
+        </div>
+        <div class="panel-body text-center">
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+        </div>
+      </div>
+    </div>
+    
   </template>
 
   <!-- ------------------------------------------------------ TEMPLATES END -->

@@ -1,6 +1,10 @@
 <!doctype html>
-<!-- template: https://www.sitepoint.com/a-basic-html5-template/ -->
 <html lang="en">
+<!-- template: https://www.sitepoint.com/a-basic-html5-template/ -->
+<!-- 
+  Creative commons content:
+  https://commons.wikimedia.org/wiki/File:User_icon_BLACK-01.png  
+-->
 
 <head>
   <meta charset="utf-8">
@@ -137,32 +141,154 @@
   </template>
 
   <template id="createGlobalPartySuccessTmpl"><!-- CREATE GLOBAL PARTY SUCC. -->
+  
+    <div class="create-global-party-success">
+      <div class="alert alert-success" role="alert">
+        Your new Global Digital Party has been created!
+      </div>
 
-    <div class="alert alert-success" role="alert">
-      Your new Global Digital Party has been created!
-    </div>
+      <div class="panel panel-success">
+        <div class="panel-heading">Global Party</div>
+        <div class="panel-body">
+          <button id="globalPartyDashboardBtn"
+                  class="btn btn-outline-secondary">
+            Go to dashboard
+          </button>
+          Name: <strong id="newPartyGlobalName"></strong>
+        </div>
+      </div>
 
-    <div class="panel panel-success">
-      <div class="panel-heading">Global Party</div>
-      <div class="panel-body">
-        Name: <strong id="newPartyGlobalName"></strong>
+      <div class="panel panel-success">
+        <div class="panel-heading">National Party</div>
+        <div class="panel-body">
+          <button id="nationalPartyDashboardBtn"
+                  class="btn btn-outline-secondary">
+            Go to dashboard
+          </button>
+          Country: <strong id="newPartyCountryName"></strong><br />
+          Name: <strong id="newPartyNationalName"></strong>
+        </div>
+      </div>
+
+      <div class="panel panel-success">
+        <div class="panel-heading">Regional Party</div>
+        <div class="panel-body">
+          <button id="regionalPartyDashboardBtn"
+                  class="btn btn-outline-secondary">
+            Go to dashboard
+          </button>
+          Region: <strong id="newPartyRegionalName"></strong>
+        </div>
       </div>
     </div>
 
-    <div class="panel panel-success">
-      <div class="panel-heading">National Party</div>
-      <div class="panel-body">
-        Country: <strong id="newPartyCountryName"></strong><br />
-        Name: <strong id="newPartyNationalName"></strong>
-      </div>
-    </div>
+  </template>
 
-    <div class="panel panel-success">
-      <div class="panel-heading">Regional Party</div>
-      <div class="panel-body">
-        Region: <strong id="newPartyRegionalName"></strong>
+  <template id="chapterDashboardTmpl"> <!-- ------------ CHAPTER DASHBOARD -->
+  <!--
+    Each chapter is composed of:
+    - a forum,
+      - at least one moderator for a thousand members
+    - a secretariat.
+    - a president
+
+    - a board of directors:
+      - Each chapter's board of directors is composed of:
+        - the chapter president, 
+        - the chapter secretary and
+        - the moderators who the chapter president will consider necessary
+    
+    - an executive committee,
+      - the moderators and the secretariat meet in executive committees
+  -->
+    <div class="chapter-dashboard">
+      <div class="page-header">
+
+        <div class="header-buttons">
+          <button id="globalPartyDashboardBtn"
+                  class="btn btn-outline-success">
+            Go to Global
+          </button>
+          <button id="nationalPartyDashboardBtn"
+                  class="btn btn-outline-primary">
+            Go to National
+          </button>
+        </div>
+
+        <h1 id="chapterName">My Global Party</h1>
+        <h4 id="chapterHeaderInfo"></h4>
+      </div>
+
+      <div class="panel panel-primary board-of-directors-panel">
+        <div class="panel-heading">
+          Board of directors
+        </div>
+        <div class="panel-body row">
+
+          <div class="col-xs-6 col-sm-4 col-md-3">
+            <div class="panel panel-info president-panel">
+              <div class="panel-heading">President</div>
+              <div class="panel-body text-center">
+                <img src="img/user.png" class="img-circle img-responsive" />
+                <span class="label label-warning">Not elected</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-4 col-md-3">
+            <div class="panel panel-info secretary-panel">
+              <div class="panel-heading">Secretary</div>
+              <div class="panel-body text-center">
+                <img src="img/user.png" class="img-circle img-responsive" />
+                <span class="label label-warning">Not elected</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-6">
+            <div class="panel panel-info moderators-panel">
+              <div class="panel-heading">
+                Moderators (0)
+              </div>
+              <div class="panel-body text-center">
+                <img src="img/user.png" class="img-circle" />
+                <img src="img/user.png" class="img-circle" />
+                <img src="img/user.png" class="img-circle" />
+                <img src="img/user.png" class="img-circle" />
+                <img src="img/user.png" class="img-circle" />
+                <img src="img/user.png" class="img-circle" />
+                <img src="img/user.png" class="img-circle" />
+                <img src="img/user.png" class="img-circle" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="panel panel-primary forum-panel">
+        <div class="panel-heading">
+          Forum (1 members)
+        </div>
+        <div class="panel-body text-center">
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+          <img src="img/user.png" class="img-circle" />
+        </div>
       </div>
     </div>
+    
   </template>
 
   <!-- ------------------------------------------------------ TEMPLATES END -->

@@ -78,6 +78,17 @@ body > .container-fluid {
         float: left;
     }
 
+.create-global-party-success .panel .panel-body > button {
+    float: right;
+}
+
+.chapter-dashboard .header-buttons {
+    float: right;
+}
+    .chapter-dashboard .header-buttons button {
+        display: block;
+        width: 100%;
+    }
 
 .chapter-dashboard img {
     margin: auto;

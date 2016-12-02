@@ -52,5 +52,47 @@ function createFackeParySuccess(data) {
     $('#newPartyNationalName').html(data.name + ', ' + data.country);
     $('#newPartyRegionalName').html(data.country + ', ZIP ' + data.zipCode);
 
+    $('#globalPartyDashboardBtn').click(function() {
+        loadChapterDashboard(data, 'global');
+    });
+    $('#nationalPartyDashboardBtn').click(function() {
+        loadChapterDashboard(data, 'national');
+    });
+    $('#regionalPartyDashboardBtn').click(function() {
+        loadChapterDashboard(data, 'regional');
+    });
+
     $('#creatingGlobalPartyModal').modal('hide');
+}
+
+function loadChapterDashboard(chapterData, chapterType) {
+    loadSection('chapterDashboard');
+
+    var chapterHeaderInfo = '';
+    switch(chapterType) {
+        case 'global':
+            chapterHeaderInfo = 'Global party';
+            $('#globalPartyDashboardBtn').hide();
+            $('#nationalPartyDashboardBtn').hide();
+            break;
+        case 'national':
+            chapterHeaderInfo =  chapterData.country + ' - National party';
+            $('#nationalPartyDashboardBtn').hide();
+            break;
+        case 'regional':
+            chapterHeaderInfo =  chapterData.country + ', ' 
+                + chapterData.zipCode + ' - Regional party';
+            break;
+    }
+
+    $('#globalPartyDashboardBtn').click(function() {
+        loadChapterDashboard(chapterData, 'global');
+    });
+
+    $('#nationalPartyDashboardBtn').click(function() {
+        loadChapterDashboard(chapterData, 'national');
+    });
+    
+    $('#chapterName').html(chapterData.name);
+    $('#chapterHeaderInfo').html(chapterHeaderInfo);
 }

@@ -56,8 +56,8 @@
             <a id="homeAHref" href="#">Home</a>
           </li>
           <li>
-            <a id="createGlobalPartyAHref" href="#">
-              Create new global party
+            <a id="createNationalPartyAHref" href="#">
+              Create new national party
             </a>
           </li>
         <ul>
@@ -92,11 +92,11 @@
     </p>
   </template>
   
-  <template id="createGlobalPartyTmpl"> <!-- ---------- CREATE GLOBAL PARTY -->
+  <template id="createNationalPartyTmpl"> <!-- ------ CREATE NATIONAL PARTY -->
 
-    <h2>Create a new Global Party</h2>
+    <h2>Create a new National Party</h2>
     <p>
-      Please, fill the form to create the your new Global Party:
+      Please, fill the form to create the your new National Party:
     </p>
 
     <div class="row">
@@ -137,25 +137,14 @@
       </form>
     </div>
 
-    <script src="js/demos/create-global-party.js"></script>
+    <script src="js/demos/create-national-party.js"></script>
   </template>
 
-  <template id="createGlobalPartySuccessTmpl"><!-- CREATE GLOBAL PARTY SUCC. -->
+  <template id="createNationalPartySuccessTmpl"><!-- NAT-PARTY CREAT. SUCC. -->
   
-    <div class="create-global-party-success">
+    <div class="create-national-party-success">
       <div class="alert alert-success" role="alert">
-        Your new Global Digital Party has been created!
-      </div>
-
-      <div class="panel panel-success">
-        <div class="panel-heading">Global Party</div>
-        <div class="panel-body">
-          <button id="globalPartyDashboardBtn"
-                  class="btn btn-outline-secondary">
-            Go to dashboard
-          </button>
-          Name: <strong id="newPartyGlobalName"></strong>
-        </div>
+        Your new National Digital Party has been created!
       </div>
 
       <div class="panel panel-success">
@@ -205,17 +194,13 @@
       <div class="page-header">
 
         <div class="header-buttons">
-          <button id="globalPartyDashboardBtn"
-                  class="btn btn-outline-success">
-            Go to Global
-          </button>
           <button id="nationalPartyDashboardBtn"
                   class="btn btn-outline-primary">
             Go to National
           </button>
         </div>
 
-        <h1 id="chapterName">My Global Party</h1>
+        <h1 id="chapterName">My National Party</h1>
         <h4 id="chapterHeaderInfo"></h4>
       </div>
 
@@ -293,13 +278,13 @@
 
   <!-- ------------------------------------------------------ TEMPLATES END -->
 
-  <div class="modal fade bs-example-modal-sm" id="creatingGlobalPartyModal"
+  <div class="modal fade bs-example-modal-sm" id="creatingNationalPartyModal"
         tabindex="-1" role="dialog">
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         
         <div class="modal-header">
-          <h4 class="modal-title">Creating global party</h4>
+          <h4 class="modal-title">Creating national party</h4>
         </div>
         <div class="modal-body">
           <p>Please wait ...</p>

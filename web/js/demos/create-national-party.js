@@ -39,22 +39,19 @@ function createFakeParty() {
         country: $('#partyCountry').val(),
         zipCode: $('#partyZipCode').val()
     };
-    $('#creatingGlobalPartyModal').modal();
+    $('#creatingNationalPartyModal').modal();
 
     var fakeDelay = 1500 + Math.random(2500);
     setTimeout(function() { createFackeParySuccess(data); }, fakeDelay);
 }
 
 function createFackeParySuccess(data) {
-    loadSection('createGlobalPartySuccess');
-    $('#newPartyGlobalName').html(data.name);
+    loadSection('createNationalPartySuccess');
+    $('#newPartyNationalName').html(data.name);
     $('#newPartyCountryName').html(data.country);
     $('#newPartyNationalName').html(data.name + ', ' + data.country);
     $('#newPartyRegionalName').html(data.country + ', ZIP ' + data.zipCode);
 
-    $('#globalPartyDashboardBtn').click(function() {
-        loadChapterDashboard(data, 'global');
-    });
     $('#nationalPartyDashboardBtn').click(function() {
         loadChapterDashboard(data, 'national');
     });
@@ -62,7 +59,7 @@ function createFackeParySuccess(data) {
         loadChapterDashboard(data, 'regional');
     });
 
-    $('#creatingGlobalPartyModal').modal('hide');
+    $('#creatingNationalPartyModal').modal('hide');
 }
 
 function loadChapterDashboard(chapterData, chapterType) {
@@ -70,11 +67,6 @@ function loadChapterDashboard(chapterData, chapterType) {
 
     var chapterHeaderInfo = '';
     switch(chapterType) {
-        case 'global':
-            chapterHeaderInfo = 'Global party';
-            $('#globalPartyDashboardBtn').hide();
-            $('#nationalPartyDashboardBtn').hide();
-            break;
         case 'national':
             chapterHeaderInfo =  chapterData.country + ' - National party';
             $('#nationalPartyDashboardBtn').hide();
@@ -84,10 +76,6 @@ function loadChapterDashboard(chapterData, chapterType) {
                 + chapterData.zipCode + ' - Regional party';
             break;
     }
-
-    $('#globalPartyDashboardBtn').click(function() {
-        loadChapterDashboard(chapterData, 'global');
-    });
 
     $('#nationalPartyDashboardBtn').click(function() {
         loadChapterDashboard(chapterData, 'national');

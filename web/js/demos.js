@@ -1,5 +1,5 @@
 $(document).ready(initializeEvents);
-var sections = [ 'home', 'createGlobalParty' ];
+var sections = [ 'home', 'createNationalParty' ];
 
 function initializeEvents() {
     var isTemplatingSupported = ('content' in document.createElement('template')); 

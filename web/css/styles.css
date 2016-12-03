@@ -61,12 +61,8 @@ body > .container-fluid {
     margin-bottom: 10px;
 }
 
-    .form-inline #partyCountry {
+    .form-inline select.form-control {
         display: block;
-    }
-
-    .form-inline #partyCountry > button {
-        float: none;
     }
 
 .form-buttons {
@@ -123,19 +119,9 @@ body > .container-fluid {
         width: 73%;
     }
 
-    .form-inline #partyCountry {
+    .form-inline select.form-control {
         display: inline-block;
         width: 60%;
-    }
-
-        .form-inline #partyCountry > button {
-            width: 100%;
-            text-align: left;
-        }
-
-    .form-inline #partyZipCode {
-        width: 90px;
-        text-align: right;
     }
         
     .chapter-dashboard .moderators-panel img {

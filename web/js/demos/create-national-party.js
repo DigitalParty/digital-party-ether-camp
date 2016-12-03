@@ -42,21 +42,16 @@ function createFakeParty() {
     $('#creatingNationalPartyModal').modal();
 
     var fakeDelay = 1500 + Math.random(2500);
-    setTimeout(function() { createFackeParySuccess(data); }, fakeDelay);
+    setTimeout(function() { createFakeParySuccess(data); }, fakeDelay);
 }
 
-function createFackeParySuccess(data) {
+function createFakeParySuccess(data) {
     loadSection('createNationalPartySuccess');
     $('#newPartyNationalName').html(data.name);
     $('#newPartyCountryName').html(data.country);
-    $('#newPartyNationalName').html(data.name + ', ' + data.country);
-    $('#newPartyRegionalName').html(data.country + ', ZIP ' + data.zipCode);
 
     $('#nationalPartyDashboardBtn').click(function() {
         loadChapterDashboard(data, 'national');
-    });
-    $('#regionalPartyDashboardBtn').click(function() {
-        loadChapterDashboard(data, 'regional');
     });
 
     $('#creatingNationalPartyModal').modal('hide');
@@ -64,16 +59,12 @@ function createFackeParySuccess(data) {
 
 function loadChapterDashboard(chapterData, chapterType) {
     loadSection('chapterDashboard');
-
+    
     var chapterHeaderInfo = '';
     switch(chapterType) {
         case 'national':
             chapterHeaderInfo =  chapterData.country + ' - National party';
             $('#nationalPartyDashboardBtn').hide();
-            break;
-        case 'regional':
-            chapterHeaderInfo =  chapterData.country + ', ' 
-                + chapterData.zipCode + ' - Regional party';
             break;
     }
 

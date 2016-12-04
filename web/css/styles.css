@@ -34,7 +34,7 @@ body > .container-fluid {
         padding-top: 8px;
         padding-bottom: 8px;
     }
-    
+
         body > .container-fluid .menu-column > ul > li > a {
             background-color: #7ca8c7;
             color: #b4cfe2;
@@ -84,6 +84,19 @@ body > .container-fluid {
     float: right;
 }
 
+.chapter-dashboard .profile-switcher {
+    text-align: center;
+    font-size: 150%;
+}
+
+    .chapter-dashboard .profile-switcher select {
+        color: white;
+        font-size: 100%;
+    }
+    .chapter-dashboard .profile-switcher select option {
+        color: black;
+    }
+
 .chapter-dashboard .header-buttons {
     float: right;
 }
@@ -92,22 +105,47 @@ body > .container-fluid {
         width: 100%;
     }
 
+.chapter-dashboard .dashboard-user {
+    display: inline-block;
+    margin: 0 16px 16px 0;
+}
+
 .chapter-dashboard img {
     margin: auto;
     margin-top: 8px;
     margin-bottom: 8px;
 }
-    .chapter-dashboard .president-panel img,
-    .chapter-dashboard .secretary-panel img {
+    .chapter-dashboard .elected-president img,
+    .chapter-dashboard .elected-secretary img {
         max-height: 90px;
     }
-.chapter-dashboard .moderators-panel img {
+.chapter-dashboard .moderators-panel .dashboard-user {
     width: 23%;
 }
-.chapter-dashboard .forum-panel img {
+.chapter-dashboard .forum-panel .dashboard-user {
     width: 23%;
 }
+.chapter-dashboard .candidate-user {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    margin-left: 32px;
+}
+.chapter-dashboard .become-a-candidate {
+    display: inline-block;
+    vertical-align: top;
+    width: 100px;
+    text-align: center;
+    margin-left: 32px;
+}
+    .chapter-dashboard .become-a-candidate .btn {
+        padding: 16px;
+        margin-top: 48px;
+    }
 
+.chapter-dashboard .non-elected-secretary form {
+    padding: 12px 48px;
+}
 
 @media (min-width: 544px) {
     .form-inline .form-group > label {
@@ -130,10 +168,10 @@ body > .container-fluid {
         width: 60%;
     }
         
-    .chapter-dashboard .moderators-panel img {
+    .chapter-dashboard .moderators-panel .dashboard-user {
         width: 48%;
     }
-    .chapter-dashboard .forum-panel img {
+    .chapter-dashboard .forum-panel .dashboard-user {
         width: 18%;
     }
 }
@@ -165,28 +203,28 @@ body > .container-fluid {
             margin: 3% 0 3% 0;
         }
         
-    .chapter-dashboard .moderators-panel img {
+    .chapter-dashboard .moderators-panel .dashboard-user {
         width: 31%;
     }
-    .chapter-dashboard .forum-panel img {
+    .chapter-dashboard .forum-panel .dashboard-user {
         width: 15%;
     }
 }
 
 @media (min-width: 992px) {
-    .chapter-dashboard .moderators-panel img {
+    .chapter-dashboard .moderators-panel .dashboard-user {
         width: 23%;
     }
-    .chapter-dashboard .forum-panel img {
+    .chapter-dashboard .forum-panel .dashboard-user {
         width: 13%;
     }
 }
 
 @media (min-width: 1200px) {
-    .chapter-dashboard .moderators-panel img {
+    .chapter-dashboard .moderators-panel .dashboard-user {
         width: 18%;
     }
-    .chapter-dashboard .forum-panel img {
+    .chapter-dashboard .forum-panel .dashboard-user {
         width: 11%;
     }
 }

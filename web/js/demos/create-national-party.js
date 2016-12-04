@@ -35,9 +35,16 @@ function validateForm() {
 
 function createFakeParty() {
     var data = {
+        level: 'national',
         name: $('#partyName').val(),
         country: $('#partyCountry').val(),
-        zipCode: $('#partyZipCode').val()
+        zipCode: $('#partyZipCode').val(),
+        forumMembers: [
+            {
+                name: 'Myself',
+                picture: 'img/user.png'
+            }
+        ]
     };
     $('#creatingNationalPartyModal').modal();
 
@@ -51,27 +58,9 @@ function createFakeParySuccess(data) {
     $('#newPartyCountryName').html(data.country);
 
     $('#nationalPartyDashboardBtn').click(function() {
-        loadChapterDashboard(data, 'national');
+        loadSection('chapterDashboard');
+        setChapterDashboardData(data);
     });
 
     $('#creatingNationalPartyModal').modal('hide');
-}
-
-function loadChapterDashboard(chapterData, chapterType) {
-    loadSection('chapterDashboard');
-    
-    var chapterHeaderInfo = '';
-    switch(chapterType) {
-        case 'national':
-            chapterHeaderInfo =  chapterData.country + ' - National party';
-            $('#nationalPartyDashboardBtn').hide();
-            break;
-    }
-
-    $('#nationalPartyDashboardBtn').click(function() {
-        loadChapterDashboard(chapterData, 'national');
-    });
-    
-    $('#chapterName').html(chapterData.name);
-    $('#chapterHeaderInfo').html(chapterHeaderInfo);
 }

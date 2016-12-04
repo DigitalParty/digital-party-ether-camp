@@ -1,5 +1,11 @@
 $(document).ready(initializeEvents);
-var sections = [ 'home', 'createGlobalParty' ];
+var sections = [ 'home', 'globalChapterDashboard', 'createNationalParty' ];
+var contextData = {
+    currentUser: {
+        name: 'Myself',
+        picture: 'img/user.png'
+    }
+};
 
 function initializeEvents() {
     var isTemplatingSupported = ('content' in document.createElement('template')); 
@@ -20,7 +26,17 @@ function initializeSection(i, sectionName) {
 }
 
 function loadSection(sectionName) {
+    setMenuActiveOption(sectionName);
     var mainPage = $('#mainPageDiv');
     var template = $('#' + sectionName + 'Tmpl');
     mainPage.html(template.html());
+}
+
+function setMenuActiveOption(sectionName) {
+    var isSectionAMenuOption = ($('#' + sectionName + 'AHref').length > 0);
+    if (!isSectionAMenuOption)
+        return;
+    
+    $('.menu-list > li').removeClass('is-active');
+    $('#' + sectionName + 'AHref').parent().addClass('is-active');
 }

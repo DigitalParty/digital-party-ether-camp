@@ -27,6 +27,12 @@ nav.navbar {
         height: 42px;
     }
 
+.form-group > input.form-control,
+.form-group > select.form-control {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 body > .container-fluid {
     margin-top: 60px;
 }
@@ -34,7 +40,7 @@ body > .container-fluid {
         padding-top: 8px;
         padding-bottom: 8px;
     }
-    
+
         body > .container-fluid .menu-column > ul > li > a {
             background-color: #7ca8c7;
             color: #b4cfe2;
@@ -43,6 +49,12 @@ body > .container-fluid {
 
         body > .container-fluid .menu-column > ul > li > a:hover {
             background-color: #6397bc;
+            color: #fff;
+        }
+        
+        body > .container-fluid .menu-column > ul > li.is-active > a,
+        body > .container-fluid .menu-column > ul > li.is-active > a:hover {
+            background-color: #6abc63;
             color: #fff;
         }
 
@@ -61,12 +73,8 @@ body > .container-fluid {
     margin-bottom: 10px;
 }
 
-    .form-inline #partyCountry {
+    .form-inline select.form-control {
         display: block;
-    }
-
-    .form-inline #partyCountry > button {
-        float: none;
     }
 
 .form-buttons {
@@ -78,9 +86,24 @@ body > .container-fluid {
         float: left;
     }
 
-.create-global-party-success .panel .panel-body > button {
+.create-national-party-success .panel .panel-body > button {
     float: right;
 }
+
+.chapter-dashboard .profile-switcher {
+    text-align: center;
+    font-size: 150%;
+}
+
+    .chapter-dashboard .profile-switcher select {
+        color: white;
+        font-size: 100%;
+        display: inline;
+        width: auto;
+    }
+    .chapter-dashboard .profile-switcher select option {
+        color: black;
+    }
 
 .chapter-dashboard .header-buttons {
     float: right;
@@ -90,22 +113,57 @@ body > .container-fluid {
         width: 100%;
     }
 
+.chapter-dashboard .dashboard-user {
+    display: inline-block;
+    margin: 0 16px 16px 0;
+    vertical-align: top;
+}
+
 .chapter-dashboard img {
     margin: auto;
     margin-top: 8px;
     margin-bottom: 8px;
 }
-    .chapter-dashboard .president-panel img,
-    .chapter-dashboard .secretary-panel img {
+    .chapter-dashboard .elected-president img,
+    .chapter-dashboard .elected-secretary img {
         max-height: 90px;
     }
-.chapter-dashboard .moderators-panel img {
-    width: 23%;
+
+.chapter-dashboard .secretary-designation-form > div.not-allowed label {
+    color: #aaa;
 }
-.chapter-dashboard .forum-panel img {
-    width: 23%;
+.chapter-dashboard .secretary-designation-form > div.not-allowed select {
+    color: #999;
+    background-color: #ddd;
 }
 
+.chapter-dashboard .moderators-panel .dashboard-user {
+    width: 23%;
+}
+.chapter-dashboard .forum-panel .dashboard-user {
+    width: 23%;
+}
+.chapter-dashboard .candidate-user {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    margin-left: 32px;
+}
+.chapter-dashboard .become-a-candidate {
+    display: inline-block;
+    vertical-align: top;
+    width: 100px;
+    text-align: center;
+    margin-left: 32px;
+}
+    .chapter-dashboard .become-a-candidate .btn {
+        padding: 16px;
+        margin-top: 48px;
+    }
+
+.chapter-dashboard .non-elected-secretary form {
+    padding: 12px 48px;
+}
 
 @media (min-width: 544px) {
     .form-inline .form-group > label {
@@ -113,35 +171,20 @@ body > .container-fluid {
         margin-right: 1%;
         text-align: right;
     }
-    .form-inline .form-group > input.form-control,
-    .form-inline .form-group > select.form-control {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
 
     .form-inline #partyName {
         width: 73%;
     }
 
-    .form-inline #partyCountry {
+    .form-inline select.form-control {
         display: inline-block;
         width: 60%;
     }
-
-        .form-inline #partyCountry > button {
-            width: 100%;
-            text-align: left;
-        }
-
-    .form-inline #partyZipCode {
-        width: 90px;
-        text-align: right;
-    }
         
-    .chapter-dashboard .moderators-panel img {
+    .chapter-dashboard .moderators-panel .dashboard-user {
         width: 48%;
     }
-    .chapter-dashboard .forum-panel img {
+    .chapter-dashboard .forum-panel .dashboard-user {
         width: 18%;
     }
 }
@@ -173,28 +216,28 @@ body > .container-fluid {
             margin: 3% 0 3% 0;
         }
         
-    .chapter-dashboard .moderators-panel img {
+    .chapter-dashboard .moderators-panel .dashboard-user {
         width: 31%;
     }
-    .chapter-dashboard .forum-panel img {
+    .chapter-dashboard .forum-panel .dashboard-user {
         width: 15%;
     }
 }
 
 @media (min-width: 992px) {
-    .chapter-dashboard .moderators-panel img {
+    .chapter-dashboard .moderators-panel .dashboard-user {
         width: 23%;
     }
-    .chapter-dashboard .forum-panel img {
+    .chapter-dashboard .forum-panel .dashboard-user {
         width: 13%;
     }
 }
 
 @media (min-width: 1200px) {
-    .chapter-dashboard .moderators-panel img {
+    .chapter-dashboard .moderators-panel .dashboard-user {
         width: 18%;
     }
-    .chapter-dashboard .forum-panel img {
+    .chapter-dashboard .forum-panel .dashboard-user {
         width: 11%;
     }
 }

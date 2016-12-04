@@ -45,6 +45,12 @@ body > .container-fluid {
             background-color: #6397bc;
             color: #fff;
         }
+        
+        body > .container-fluid .menu-column > ul > li.is-active > a,
+        body > .container-fluid .menu-column > ul > li.is-active > a:hover {
+            background-color: #6abc63;
+            color: #fff;
+        }
 
     body > .container-fluid .main-page {
         position: relative;

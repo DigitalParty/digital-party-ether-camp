@@ -39,12 +39,7 @@ function createFakeParty() {
         name: $('#partyName').val(),
         country: $('#partyCountry').val(),
         zipCode: $('#partyZipCode').val(),
-        forumMembers: [
-            {
-                name: 'Myself',
-                picture: 'img/user.png'
-            }
-        ]
+        forumMembers: [ contextData.currentUser ]
     };
     $('#creatingNationalPartyModal').modal();
 

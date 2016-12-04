@@ -1,5 +1,11 @@
 $(document).ready(initializeEvents);
 var sections = [ 'home', 'globalChapterDashboard', 'createNationalParty' ];
+var contextData = {
+    currentUser: {
+        name: 'Myself',
+        picture: 'img/user.png'
+    }
+};
 
 function initializeEvents() {
     var isTemplatingSupported = ('content' in document.createElement('template')); 

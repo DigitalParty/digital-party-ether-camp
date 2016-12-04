@@ -7,8 +7,7 @@ var fakeChapterData = {
 };
 
 $('#globalPartyDashboardBtn').click(function() {
-    // loadChapterDashboard(data, 'national');
-    alert('Not implemented');
+    loadSection('globalChapterDashboard');
 });
 
 $('#nationalPartyDashboardBtn').click(function() {
@@ -16,13 +15,55 @@ $('#nationalPartyDashboardBtn').click(function() {
     alert('Not implemented');
 });
 
-$('.become-a-candidate > button').click(function() {
-    alert('Not implemented');
-});
+$('.become-a-candidate > button').click(becomeACandidate);
+
+$('#profileSwitcher').change(setProfileViewerData);
 
 function setChapterDashboardData(data) {
     data = data || fakeChapterData;
 
+    $('#chapterName').html(data.name);
+
+    setChapterLevelData(data);
+
+    setPresidentData(data);
+    setSecretaryData(data);
+
+    var userTemplate = $('#chapterDashboardUserTmpl');
+    setModeratorsData(data, userTemplate);
+    setForumMembersData(data, userTemplate);
+    
+    setProfileViewerData();
+}
+
+function setProfileViewerData() {
+    var profile = $('#profileSwitcher').val();
+
+    switch (profile) {
+        case 'currentChapterForumMember':
+            $('.secretary-designation-form').hide();
+            $('.secretary-designation-not-available').show();
+            break;
+        case 'globalPartyPresident':
+            $('.secretary-designation-form').show();
+            $('.secretary-designation-not-available').hide();
+            $('#designationForSecretaryByPresidentAbove').removeAttr('disabled');
+            $('#designationForSecretaryBySecretaryAbove').attr('disabled', 'disabled');
+            $('.designation-for-secretary-by-president-above').removeClass('not-allowed');
+            $('.designation-for-secretary-by-secretary-above').addClass('not-allowed');
+            break;
+        case 'globalPartyScretary':
+            $('.secretary-designation-form').show();
+            $('.secretary-designation-not-available').hide();
+            $('#designationForSecretaryByPresidentAbove').attr('disabled', 'disabled');
+            $('#designationForSecretaryBySecretaryAbove').removeAttr('disabled');
+            $('.designation-for-secretary-by-president-above').addClass('not-allowed');
+            $('.designation-for-secretary-by-secretary-above').removeClass('not-allowed');
+            break;
+    }
+}
+
+function setChapterLevelData(data) {
     var chapterHeaderInfo = '';
     switch(data.level) {
         case 'global':
@@ -35,7 +76,10 @@ function setChapterDashboardData(data) {
             $('#nationalPartyDashboardBtn').hide();
             break;
     }
+    $('#chapterHeaderInfo').html(chapterHeaderInfo);
+}
 
+function setPresidentData(data) {
     var isPresidentElected = (data.president);
     if (isPresidentElected) {
         $('.non-elected-president').hide();
@@ -52,12 +96,26 @@ function setChapterDashboardData(data) {
             candidateList,
             candidateTemplate,
             data.presidentCandidates,
-            function (candidate, candidateHtml) {
-                candidateHtml.find('.candidate-name').html(candidate.name);
-            }
+            renderPresidentCandidate
         );
     }
+}
 
+function renderPresidentCandidate(candidate, candidateHtml) {
+    candidateHtml.find('.candidate-name').html(candidate.name);
+    candidateHtml.find('img').attr('src', candidate.picture);
+}
+
+function becomeACandidate() {
+    $('.become-a-candidate > button').hide();
+    var candidateList = $('.candidate-list');
+    var candidateTemplate = $('#chapterDashboardCandidateTmpl');
+    var candidateHtml = $(candidateTemplate.html());
+    renderPresidentCandidate(contextData.currentUser, candidateHtml)
+    candidateList.append(candidateHtml);
+}
+
+function setSecretaryData(data) {
     var isSecretaryElected = (data.secretary);
     if (isSecretaryElected) {
         $('.non-elected-secretary').hide();
@@ -67,10 +125,25 @@ function setChapterDashboardData(data) {
     } else {
         $('.elected-secretary').hide();
         $('.non-elected-secretary').show();
+        
+        $('.secretary-designation-form select')
+            .each(function(i, select) {
+                addForumMembersToSecretaryDesignationList($(select), data);
+            });
     }
+}
 
-    var userTemplate = $('#chapterDashboardUserTmpl');
+function addForumMembersToSecretaryDesignationList(select, data) {
+    select.html('');
+    var selectOptionsHtml = '<option>( Select user from Global Party forum )</option>';
+    $(data.forumMembers || []).each(function(i, forumMember) {
+        selectOptionsHtml += '<option>' + forumMember.name + '</option>';
+    });
 
+    select.html(selectOptionsHtml);
+}
+
+function setModeratorsData(data, userTemplate) {
     data.moderators = (data.moderators || []);
     $('.moderator-counter').html(data.moderators.length);
     var moderatorList = $('.moderator-list');
@@ -83,9 +156,11 @@ function setChapterDashboardData(data) {
             moderatorHtml.find('.user-name').html(moderator.name);
         }
     );
+}
 
+function setForumMembersData(data, userTemplate) {
     data.forumMembers = (data.forumMembers || []);
-    $('.forum-member-counter').html(data.forumMembers || [].length);
+    $('.forum-member-counter').html(data.forumMembers.length);
     var forumMemberList = $('.forum-member-list');
     renderTemplateList(
         forumMemberList,
@@ -96,9 +171,6 @@ function setChapterDashboardData(data) {
             userHtml.find('.user-name').html(user.name);
         }
     );
-    
-    $('#chapterName').html(data.name);
-    $('#chapterHeaderInfo').html(chapterHeaderInfo);
 }
 
 function renderTemplateList(listContainer, template, elementArray, elementInitFn) {

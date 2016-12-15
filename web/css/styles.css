@@ -6,6 +6,10 @@ body {
     background-color: #b4cfe2;
 }
 
+select {
+    overflow-y: scroll;
+}
+
 nav.navbar {
     position: fixed;
     width: 100%;
@@ -28,9 +32,15 @@ nav.navbar {
     }
 
 .form-group > input.form-control,
-.form-group > select.form-control {
+.form-group > select.form-control,
+.form-group > textarea.form-control {
     padding-left: 5px;
     padding-right: 5px;
+}
+
+fieldset.form-group {
+    margin-left: 24px;
+    margin-right: 24px;
 }
 
 body > .container-fluid {
@@ -105,21 +115,25 @@ body > .container-fluid {
         color: black;
     }
 
-.chapter-dashboard .header-buttons {
+.chapter-dashboard .header-buttons,
+.committee-dashboard .header-buttons {
     float: right;
 }
-    .chapter-dashboard .header-buttons button {
+    .chapter-dashboard .header-buttons button,
+    .committee-dashboard .header-buttons button  {
         display: block;
         width: 100%;
     }
 
-.chapter-dashboard .dashboard-user {
+.chapter-dashboard .dashboard-user,
+.committee-dashboard .dashboard-user  {
     display: inline-block;
     margin: 0 16px 16px 0;
     vertical-align: top;
 }
 
-.chapter-dashboard img {
+.chapter-dashboard img,
+.committee-dashboard img {
     margin: auto;
     margin-top: 8px;
     margin-bottom: 8px;
@@ -140,7 +154,8 @@ body > .container-fluid {
 .chapter-dashboard .moderators-panel .dashboard-user {
     width: 23%;
 }
-.chapter-dashboard .forum-panel .dashboard-user {
+.chapter-dashboard .forum-panel .dashboard-user,
+.committee-dashboard .members-panel .dashboard-user {
     width: 23%;
 }
 .chapter-dashboard .candidate-user {
@@ -165,6 +180,34 @@ body > .container-fluid {
     padding: 12px 48px;
 }
 
+.committee-dashboard .proposal-list .proposal-list-element {
+    text-align: left;
+    clear: both;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #999;
+}
+
+    .committee-dashboard .proposal-list .proposal-list-element:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .committee-dashboard .proposal-list .proposal-list-element .proposal-buttons {
+        float: right;
+    } 
+
+.btn.proposal-vote-in-favour-button.btn-success.active {
+    background-color: #4caf50;
+    color: white;
+} 
+
+.btn.proposal-vote-against-button.btn-danger.active {
+    background-color: #f44336;
+    color: white;
+} 
+
 @media (min-width: 544px) {
     .form-inline .form-group > label {
         width: 24%;
@@ -184,7 +227,8 @@ body > .container-fluid {
     .chapter-dashboard .moderators-panel .dashboard-user {
         width: 48%;
     }
-    .chapter-dashboard .forum-panel .dashboard-user {
+    .chapter-dashboard .forum-panel .dashboard-user,
+    .committee-dashboard .members-panel .dashboard-user {
         width: 18%;
     }
 }
@@ -219,7 +263,8 @@ body > .container-fluid {
     .chapter-dashboard .moderators-panel .dashboard-user {
         width: 31%;
     }
-    .chapter-dashboard .forum-panel .dashboard-user {
+    .chapter-dashboard .forum-panel .dashboard-user,
+    .committee-dashboard .members-panel .dashboard-user {
         width: 15%;
     }
 }
@@ -228,7 +273,8 @@ body > .container-fluid {
     .chapter-dashboard .moderators-panel .dashboard-user {
         width: 23%;
     }
-    .chapter-dashboard .forum-panel .dashboard-user {
+    .chapter-dashboard .forum-panel .dashboard-user,
+    .committee-dashboard .members-panel .dashboard-user {
         width: 13%;
     }
 }
@@ -237,7 +283,8 @@ body > .container-fluid {
     .chapter-dashboard .moderators-panel .dashboard-user {
         width: 18%;
     }
-    .chapter-dashboard .forum-panel .dashboard-user {
+    .chapter-dashboard .forum-panel .dashboard-user,
+    .committee-dashboard .members-panel .dashboard-user {
         width: 11%;
     }
 }

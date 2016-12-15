@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<!-- template: https://www.sitepoint.com/a-basic-html5-template/ -->
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Digital Party - Chapter Dashboard</title>
+  <meta name="description" content="Digital Party">
+  <meta name="author" content="Digital Party Team">
+  <link rel="icon" type="image/png" href="img/digital-party-logo-32px.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="img/digital-party-logo-16px.png" sizes="16x16" />
+
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap-material-4.0.2-dist/css/bootstrap-material-design.min.css">
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap-material-4.0.2-dist/css/ripples.min.css">
+
+  <link rel="stylesheet" href="css/common.css?v=1.0">
+  <link rel="stylesheet" href="css/dashboard.css?v=1.0">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#page-top">
+        <img src="img/digital-party-logo-64px.png" />
+      </a>
+      <a class="navbar-brand" href="#page-top">
+        Digital Party
+      </a>
+
+    </div>
+  </nav>
+
+  <div class="loading-panel">
+    loading
+  </div>
+
+  <div class="container-fluid main-content">
+    <div class="row">
+          
+      <div class="col-md-3 left-column">
+        
+        <ul class="nav nav-pills">
+          <li>
+            <div class="alert alert-warning">
+              <h5>WARNING</h5>
+              <p>
+                This is a <strong>work in progress app</strong>
+                working on the <strong>Ropsten test network</strong>.
+              </p>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="col-md-9 offset-md-3">
+
+        <div class="well main-page chapter-dashboard">
+
+          <div class="page-header">
+            <h1 id="chapterName">[Digital Party Name not implemented yet]</h1>
+            <h4 id="chapterHeaderInfo"></h4>
+          </div>
+
+          <div class="panel panel-primary board-of-directors-panel">
+            <div class="panel-heading">
+              Board of directors
+            </div>
+            <div class="panel-body row">
+
+              <div class="col-xs-6 col-sm-4 col-md-3 elected-president">
+                <div class="panel panel-info">
+                  <div class="panel-heading">President</div>
+                  <div class="panel-body text-center">
+                    <img src="img/user.png" class="img-circle img-responsive elected-president-picture" />
+                    <div class="elected-president-name">President Name</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 non-elected-president">
+                <div class="panel panel-info president-panel">
+                  <div class="panel-heading">President</div>
+                  <div class="panel-body text-center">
+
+                    <div class="col-xs-2">
+                      <img src="img/user.png" class="img-circle img-responsive" />
+                      <span class="label label-warning">Not elected</span>
+                    </div>
+                    <div class="col-xs-10 text-left">
+                      President election is not implemented yet
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-6 col-sm-4 col-md-3 elected-secretary">
+                <div class="panel panel-info">
+                  <div class="panel-heading">Secretary</div>
+                  <div class="panel-body text-center">
+                    <img src="img/user.png" class="img-circle img-responsive elected-secretary-picture" />
+                    <div class="elected-secretary-name">President Name</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 non-elected-secretary">
+                <div class="panel panel-info">
+                  <div class="panel-heading">Secretary</div>
+                  <div class="panel-body text-center">
+
+                    <div class="col-xs-2">
+                      <img src="img/user.png" class="img-circle img-responsive" />
+                      <span class="label label-warning">Not elected</span>
+                    </div>
+                    <div class="col-xs-10 text-left">
+
+                      Secretary election is not implemented yet
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4 col-md-6">
+                <div class="panel panel-info moderators-panel">
+                  <div class="panel-heading">
+                    Moderators (<span class="moderator-counter">0</span> members)
+                  </div>
+                  <div class="panel-body text-center moderator-list">
+                    Moderators are not implemented yet
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="panel panel-primary forum-panel">
+            <div class="panel-heading">
+              Forum (<span class="forum-member-counter">0</span> members)
+            </div>
+            <div class="panel-body text-center forum-member-list">
+                Forum members are not implemented yet
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="lib/bootstrap-material-4.0.2-dist/js/material.min.js"></script>
+  <script src="lib/bootstrap-material-4.0.2-dist/js/ripples.min.js"></script>
+  <script>
+    $.material.init();
+  </script>
+
+  <script src="//cdn.jsdelivr.net/bluebird/3.4.5/bluebird.js"></script>
+  <script src="lib/web3.min.js"></script>
+  <script src="js/contracts/national-chapter-contract.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/national-chapter-dashboard.js"></script>
+</body>
+</html>

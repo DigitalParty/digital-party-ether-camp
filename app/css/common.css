@@ -10,6 +10,19 @@ select {
   overflow-y: scroll;
 }
 
+.loading-panel {
+  height: 100%;
+  width: 100%;
+  color: #333;
+  padding: 10% 0;
+  font-size: 48px;
+  text-align: center;
+}
+
+.main-content {
+  display: none;
+}
+
 nav.navbar {
   position: fixed;
   width: 100%;

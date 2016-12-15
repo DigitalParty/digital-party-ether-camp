@@ -1,0 +1,56 @@
+.chapter-dashboard {
+  margin: 24px;
+}
+  .chapter-dashboard .dashboard-user  {
+    display: inline-block;
+    margin: 0 16px 16px 0;
+    vertical-align: top;
+  }
+
+  .chapter-dashboard img {
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .chapter-dashboard .elected-president img,
+  .chapter-dashboard .elected-secretary img {
+    max-height: 90px;
+  }
+
+
+@media (min-width: 544px) {
+  .chapter-dashboard .moderators-panel .dashboard-user {
+    width: 48%;
+  }
+  .chapter-dashboard .forum-panel .dashboard-user {
+    width: 18%;
+  }
+}
+
+@media (min-width: 768px) {
+  .chapter-dashboard .moderators-panel .dashboard-user {
+    width: 31%;
+  }
+  .chapter-dashboard .forum-panel .dashboard-user {
+    width: 15%;
+  }
+}
+
+@media (min-width: 992px) {
+  .chapter-dashboard .moderators-panel .dashboard-user {
+    width: 23%;
+  }
+  .chapter-dashboard .forum-panel .dashboard-user {
+    width: 13%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .chapter-dashboard .moderators-panel .dashboard-user {
+    width: 18%;
+  }
+  .chapter-dashboard .forum-panel .dashboard-user {
+    width: 11%;
+  }
+}

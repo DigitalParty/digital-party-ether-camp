@@ -1,5 +1,5 @@
 $(document).ready(initializeEvents);
-var sections = [ 'home', 'globalChapterDashboard', 'createNationalParty' ];
+var sections = [ 'home', 'globalChapterDashboard', 'createNationalParty', 'committeeDashboard' ];
 var contextData = {
     currentUser: {
         name: 'Myself',

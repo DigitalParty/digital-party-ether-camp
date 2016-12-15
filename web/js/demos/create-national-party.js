@@ -1,17 +1,12 @@
-$(document).ready(initializeEvents);
+$('#createPartyGiveUpBtn').click(function() {
+    loadSection('home');
+});
 
-function initializeEvents() {
+$('#createPartySubmitBtn').click(createFakeParty);
 
-    $('#createPartyGiveUpBtn').click(function() {
-        loadSection('home');
-    });
-    
-    $('#createPartySubmitBtn').click(createFakeParty);
-
-    validateForm();
-    $('#createPartyForm input, #createPartyForm select')
-        .each(initializeFormField);
-}
+validateForm();
+$('#createPartyForm input, #createPartyForm select')
+    .each(initializeFormField);
 
 function initializeFormField(i, field) {
     $(field).keydown(validateForm);
